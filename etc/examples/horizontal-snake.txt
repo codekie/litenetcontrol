@@ -1,0 +1,13 @@
+on row 0
+on area 3,1 0,1
+on row 2
+on area 3,3 0,3
+on row 4
+on area 3,5 0,5
+on row 6
+on area 3,7 0,7
+on row 8
+on area 3,9 0,9
+on row 10
+on area 3,11 0,11
+exit

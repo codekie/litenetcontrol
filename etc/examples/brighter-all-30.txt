@@ -1,0 +1,3 @@
+off all
+brighter all 30
+exit

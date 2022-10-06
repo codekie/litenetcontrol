@@ -1,0 +1,4 @@
+off all
+on all
+off all
+exit

@@ -1,0 +1,11 @@
+# Directories
+.vscode
+node_modules
+tmp
+
+# Absolute paths to directories
+/coverage
+
+# Files
+.size-snapshot.json
+junit.xml

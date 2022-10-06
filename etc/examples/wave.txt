@@ -1,0 +1,25 @@
+on row 0
+on row 1
+on row 2
+on row 3
+on row 4
+off row 0
+on row 5
+off row 1
+on row 6
+off row 2
+on row 7
+off row 3
+on row 8
+off row 4
+on row 9
+off row 5
+on row 10
+off row 6
+on row 11
+off row 7
+off row 8
+off row 9
+off row 10
+off row 11
+exit

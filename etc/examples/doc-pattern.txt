@@ -1,0 +1,8 @@
+off all
+on row 2
+brighter single 1,4 40
+brighter single 2,6 40
+on row 8
+on area 0,3 0,7
+on area 3,3 3,7
+exit
