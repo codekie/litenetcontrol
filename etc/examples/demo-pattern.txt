@@ -1,0 +1,5 @@
+on all
+off all
+on spiral
+off spiral
+exit
