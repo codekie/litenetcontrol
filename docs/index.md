@@ -6,7 +6,9 @@ This tool consists of two components. The luminaire-controller itself and the RE
 litenet web interface, parses the content and then executes the command by sending the corresponding form-requests to
 the litenet server.
 
-Example:
+**Example, for the following floor-configuration:**
+
+![floor configuration](./images/floor_configuration.png)
 
 ```
 > on area 1,4 3,8
