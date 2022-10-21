@@ -5,7 +5,7 @@ import {
     Document,
     Element,
     Node,
-} from 'https://deno.land/x/deno_dom@v0.1.32-alpha/deno-dom-wasm.ts';
+} from '../deps.ts';
 import { MissingAttributeError } from '../repl/errors/index.ts';
 
 class Luminaire {

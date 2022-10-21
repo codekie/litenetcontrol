@@ -1,4 +1,4 @@
-import { Element } from 'https://deno.land/x/deno_dom@v0.1.32-alpha/deno-dom-wasm.ts';
+import { Element } from '../../deps.ts';
 
 export class ApplicationError extends Error {}
 

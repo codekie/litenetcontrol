@@ -1,4 +1,4 @@
-import { Document } from 'https://deno.land/x/deno_dom@v0.1.32-alpha/deno-dom-wasm.ts';
+import { Document } from '../deps.ts';
 import { InvalidActionCoordsError } from '../repl/errors/index.ts';
 import { ActionDefinition } from './action.ts';
 import { Luminaire } from './luminaire.ts';

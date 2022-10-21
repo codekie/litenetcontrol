@@ -1,4 +1,4 @@
-import { readLines } from 'https://deno.land/std@0.146.0/io/buffer.ts';
+import { readLines } from '../deps.ts';
 import { Context } from './context.ts';
 
 export type ResultProcessor = (
