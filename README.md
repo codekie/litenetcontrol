@@ -61,6 +61,24 @@ password)
   deno run --allow-net --allow-env --allow-read src/repl/index.ts -u username -p password http://127.0.0.1:8000
 ```
 
+## Run tests
+
+To run the tests in this project, run following command:
+
+```bash
+  deno test --allow-read
+```
+
+To determine the code coverage, run following commands:
+
+```bash
+  deno test --allow-read --coverage=coverage
+  deno coverage coverage --lcov --output=lcov.info
+```
+
+To view the coverage, you might want to have a look at the "Coverage Gutters" plugin in VS Code. Or use the `genhtml`-
+tool to generate a HTML-report.
+
 
 ## Usage/Examples
 

@@ -9,3 +9,4 @@ tmp
 # Files
 .size-snapshot.json
 junit.xml
+lcov.info
