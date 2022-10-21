@@ -13,7 +13,7 @@ import { Action } from '../../../lighting/action.ts';
 import { ModeOptions } from '../interfaces/mode-opations.ts';
 import { LitenetController } from '../../../lighting/index.ts';
 import { LightPattern } from '../../../lighting/light-pattern.ts';
-import { CommanderError } from 'https://deno.land/x/cmd@v1.2.0/commander/index.ts';
+import { CommanderError } from '../../../deps.ts';
 
 export { parseCoords, runByLuminairePattern, handleCommanderError };
 

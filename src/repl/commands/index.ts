@@ -7,7 +7,7 @@ import { executeSet } from './set.ts';
 import { exit } from './exit.ts';
 import { Context } from '../context.ts';
 import { ReplCommand } from '../repl.ts';
-import { Command } from 'https://deno.land/x/cmd@v1.2.0/commander/index.ts';
+import { Command } from '../../deps.ts';
 import { Action } from '../../lighting/action.ts';
 import { handleCommanderError } from './utils/index.ts';
 import { HandlingError, HelpCall } from '../errors/index.ts';

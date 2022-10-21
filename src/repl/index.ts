@@ -1,4 +1,4 @@
-import { Command } from 'https://deno.land/x/cmd@v1.2.0/mod.ts';
+import { Command } from '../deps.ts';
 import { executeCommand } from './commands/index.ts';
 import { Repl, ReplCommand, ResultProcessor } from './repl.ts';
 import { ApplicationError, MissingArgumentError } from './errors/index.ts';

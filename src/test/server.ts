@@ -1,4 +1,4 @@
-import { serve } from 'https://deno.land/std@0.140.0/http/server.ts';
+import { serve } from '../dev-deps.ts';
 import { Action, ActionDefinition } from '../lighting/action.ts';
 
 serve(handleRequest);

@@ -1,4 +1,4 @@
-import { Command } from 'https://deno.land/x/cmd@v1.2.0/commander/index.ts';
+import { Command } from '../../deps.ts';
 import { LitenetController } from '../../lighting/index.ts';
 import { handleCommanderError } from './utils/index.ts';
 
