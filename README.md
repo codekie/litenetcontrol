@@ -80,6 +80,31 @@ To view the coverage, you might want to have a look at the "Coverage Gutters" pl
 tool to generate a HTML-report.
 
 
+## Manage-script
+
+This repo contains a "manage"-script which runs other scripts with predefined arguments (like NPM-scripts. See also: 
+[here](https://dev.to/alexmercedcoder/creating-deno-scripts-like-node-npm-scripts-4350)).
+
+**The usage is:**
+
+```bash
+  deno run --allow-run src/manage.ts <task_name>
+```
+
+**Following tasks are supported:**
+
+- `start`: Runs the CLI. All arguments after the `task_name` are passed to the CLI
+- `test`: Runs the tests
+- `test-watch`: Re-runs the tests on file modification
+- `coverage`: Runs the code coverage
+
+e.g.:
+
+```bash
+  deno run --allow-run src/manage.ts start -u og1sued -p og1sued http://127.0.0.1:8000
+```
+
+
 ## Usage/Examples
 
 Usage:
