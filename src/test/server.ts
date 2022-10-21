@@ -1,5 +1,6 @@
 import { serve } from 'https://deno.land/std@0.140.0/http/server.ts';
 import { Action, ActionDefinition } from '../lighting/action.ts';
+import {readFile} from './utils/fs.ts';
 
 serve(handleRequest);
 
@@ -9,9 +10,8 @@ async function handleRequest(request: Request): Promise<Response> {
     const fileName = pathname.split('/').pop();
     let file: Uint8Array;
     try {
-        file = await Deno.readFile(`./data/html/${fileName}`);
+        file = await readFile(`./data/html/${fileName}`);
     } catch (_e) {
-        _log(`${fileName} could not be read`, start);
         return new Response(`Error reading file`);
     }
     return new Promise((resolve, reject) => {
