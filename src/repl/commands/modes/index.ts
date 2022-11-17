@@ -50,7 +50,7 @@ export {
 
 // Public
 
-async function handleDimMode(action: string, argsRaw: string[]) {
+async function handleDimMode(action: Action, argsRaw: string[]) {
     const args = argsRaw.slice();
     // Determine the dim-level
     const dimLevelRaw = args.pop();
@@ -62,14 +62,14 @@ async function handleDimMode(action: string, argsRaw: string[]) {
     return await _handleMode(action, args, { dimLevel });
 }
 
-async function handleMode(action: string, argsRaw: string[]) {
+async function handleMode(action: Action, argsRaw: string[]) {
     return await _handleMode(action, argsRaw);
 }
 
 // Private
 
 async function _handleMode(
-    action: string,
+    action: Action,
     argsRaw: string[],
     modeOptions?: ModeOptions
 ) {

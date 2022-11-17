@@ -8,17 +8,17 @@ import { exit } from './exit.ts';
 import { Context } from '../context.ts';
 import { ReplCommand } from '../repl.ts';
 import { Command } from '../../deps.ts';
-import { Action } from '../../lighting/action.ts';
+import { Action, ActionName } from '../../lighting/action.ts';
 import { handleCommanderError } from './utils/index.ts';
 import { HandlingError, HelpCall } from '../errors/index.ts';
 
 export type CommandHandler = (
-    action: string,
+    action: Action,
     args: string[]
 ) => Promise<string | null>;
 
 export interface CommandHandlers {
-    [key: string]: (action: string, args: string[]) => Promise<string | null>;
+    [key: string]: (action: Action, args: string[]) => Promise<string | null>;
 }
 
 const Handler: CommandHandlers = {
@@ -85,10 +85,10 @@ async function _handleAction() {
     const command: Command = args
         .splice(idxCommand, 1)
         .pop() as unknown as Command;
-    const actionName = '' + command.name();
-    const action = Action[actionName];
+    const commandName = '' + command.name();
+    const action = Action[ActionName.valueOf(commandName)];
     // Get the right command-handler
-    const commandHandler: CommandHandler | undefined = Handler[actionName];
+    const commandHandler: CommandHandler | undefined = Handler[commandName];
     if (action && !commandHandler) {
         return `Unknown command: ${action}`;
     }

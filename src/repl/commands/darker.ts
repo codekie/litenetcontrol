@@ -1,6 +1,7 @@
 import { handleDimMode } from './modes/index.ts';
 import { Command } from '../../deps.ts';
 import { handleCommanderError } from './utils/index.ts';
+import { Action } from '../../lighting/action.ts';
 
 // PUBLIC API
 
@@ -9,7 +10,7 @@ export { executeDarker };
 // IMPLEMENTATION DETAILS
 
 async function executeDarker(
-    action: string,
+    action: Action,
     args: string[]
 ): Promise<string | null> {
     const program = new Command()

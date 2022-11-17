@@ -1,4 +1,4 @@
-import { Element } from '../../deps.ts';
+import {Element} from '../../deps.ts';
 
 export class ApplicationError extends Error {}
 
@@ -7,6 +7,19 @@ export class ElementNotFoundError extends ApplicationError {}
 export class InvalidActionCoordsError extends ApplicationError {}
 
 export class InvalidActionHandlerError extends ApplicationError {}
+
+export class InvalidArgumentError extends ApplicationError {
+    argument: string | null | undefined;
+
+    constructor(argument: string | null | undefined) {
+        super();
+        this.argument = argument;
+    }
+
+    toString() {
+        return this.argument;
+    }
+}
 
 export class InvalidCoordinatesError extends ApplicationError {
     rawCoords: string | null | undefined;
@@ -27,7 +40,7 @@ export class MissingAttributeError extends ApplicationError {
 
     constructor(element: Element, attribute: string) {
         super();
-        this.element = element;
+        this.element   = element;
         this.attribute = attribute;
     }
 
@@ -43,6 +56,7 @@ export class UnparsableHtmlResponseError extends ApplicationError {
         super();
         this.response = response;
     }
+
     toString(): string {
         if (typeof this.response === 'undefined') return 'undefined';
         if (this.response === null) return 'null';
@@ -63,6 +77,7 @@ export class UnknownCommandError extends HandlingError {
         super();
         this.command = command;
     }
+
     toString() {
         return `Unknown command ${this.command}`;
     }
@@ -75,6 +90,7 @@ export class UnknownMode extends HandlingError {
         super();
         this.mode = mode;
     }
+
     toString() {
         return `Unknown mode ${this.mode}`;
     }

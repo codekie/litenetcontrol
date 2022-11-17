@@ -1,6 +1,7 @@
 import { Command } from '../../deps.ts';
 import { LitenetController } from '../../lighting/index.ts';
 import { handleCommanderError } from './utils/index.ts';
+import { Action } from '../../lighting/action.ts';
 
 // PUBLIC API
 
@@ -9,7 +10,7 @@ export { executeSet };
 // IMPLEMENTATION DETAILS
 
 async function executeSet(
-    _action: string,
+    _action: Action,
     args: string[]
 ): Promise<string | null> {
     const program = new Command()

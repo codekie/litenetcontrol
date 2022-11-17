@@ -120,6 +120,7 @@ class LightPattern {
             res.splice(
                 res.length,
                 0,
+                // @ts-ignore TS2684
                 ...luminairePattern
                     .apply(null, args)
                     .map((luminaire) => new Command(luminaire, action))

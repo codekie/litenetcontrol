@@ -20,7 +20,7 @@ const Mode: CommandHandlers = {
 
 export { executeTrail };
 
-async function executeTrail(action: string, args: string[] = []) {
+async function executeTrail(action: Action, args: string[] = []) {
     const mode = args[0];
     const modeHandler = Mode[mode];
     if (mode && !modeHandler) {
@@ -30,7 +30,7 @@ async function executeTrail(action: string, args: string[] = []) {
 }
 
 async function _executeModeAll(
-    _action: string,
+    _action: Action,
     _args: string[]
 ): Promise<string> {
     // TODO implement me
@@ -38,7 +38,7 @@ async function _executeModeAll(
 }
 
 async function _executeModeArea(
-    _action: string,
+    _action: Action,
     args: string[]
 ): Promise<string> {
     const topLeft = parseCoords(args[0]);
@@ -50,7 +50,7 @@ async function _executeModeArea(
 }
 
 async function _executeModeCol(
-    _action: string,
+    _action: Action,
     args: string[]
 ): Promise<string> {
     const col = +args[0];
@@ -61,7 +61,7 @@ async function _executeModeCol(
 }
 
 async function _executeModeRow(
-    _action: string,
+    _action: Action,
     args: string[]
 ): Promise<string> {
     const row = args[0];
