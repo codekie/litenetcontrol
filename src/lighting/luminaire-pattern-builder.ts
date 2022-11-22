@@ -48,6 +48,26 @@ class LuminairePatternBuilder {
         Luminaire.setContext(context);
     }
 
+    static staticPrintSetup() {
+        const cols = LuminairePatternBuilder.luminaires.length;
+        console.log('Luminaire-setup:');
+        console.log(`.-${ ''.padStart(cols * 6, '-') }.`);
+        _transposeMatrix(LuminairePatternBuilder.luminaires)
+            .forEach((rows: Luminaire[], idxRow: number) => {
+                let line = '| ';
+                rows.forEach((luminaire: Luminaire, idxCol: number) => {
+                    if (luminaire.disabled) {
+                        line += '      ';
+                        return;
+                    }
+                    line += `${idxCol.toString().padStart(2, ' ')},${idxRow.toString().padEnd(2, ' ')} `;
+                });
+                line += '|';
+                console.log(line);
+            });
+        console.log(`'-${ ''.padStart(cols * 6, '-') }'`);
+    }
+
     static getSingle(coords: Coords): Luminaire[] {
         return LuminairePatternBuilder.getArea(coords, coords);
     }
@@ -196,4 +216,9 @@ function _flip(
     if (coordsLeftTop[idxCoord] <= coordsRightBottom[idxCoord]) return false;
     arr.reverse();
     return true;
+}
+
+function _transposeMatrix<T>(matrix: T[][]) {
+    let [row] = matrix;
+    return row.map((value: T, col: number) => matrix.map((row: T[]) => row[col]));
 }

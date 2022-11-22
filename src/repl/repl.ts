@@ -1,5 +1,6 @@
 import { readLines } from '../deps.ts';
 import { Context } from './context.ts';
+import {LuminairePatternBuilder} from '../lighting/luminaire-pattern-builder.ts';
 
 export type ResultProcessor = (
     error: Error | null,
@@ -65,6 +66,7 @@ function _echo(line: string, _context: Context, callback: ResultProcessor) {
 }
 
 async function _run(session: Repl): Promise<void> {
+    LuminairePatternBuilder.staticPrintSetup();
     await _writePrompt(session);
     for await (const line of readLines(Deno.stdin)) {
         try {
