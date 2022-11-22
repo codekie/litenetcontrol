@@ -1,7 +1,7 @@
 import {
     Coords,
     LuminairePattern,
-    LuminairePatternArgs,
+    LuminairePatternArgs, LuminairePatternBuilder,
 } from '../../../lighting/luminaire-pattern-builder.ts';
 import {
     HelpCall,
@@ -21,9 +21,16 @@ function parseCoords(rawInput: string | undefined): Coords {
     if (!rawInput) throw new InvalidCoordinatesError(rawInput);
     const normalized = rawInput.replace(/\s*/g, '');
     if (!/^\d+,\d+$/.test(normalized)) new InvalidCoordinatesError(rawInput);
-    const coords = normalized.split(',');
+    const coordsStr = normalized.split(',');
     // The RegExp makes sure that the Array has two entries
-    return coords.map((val) => +val).slice(0, 2) as Coords;
+    const coords = coordsStr.map((val) => +val).slice(0, 2) as Coords;
+    if (coords[0] < 0) {
+        coords[0] = LuminairePatternBuilder.COLS - 1 + coords[0];
+    }
+    if (coords[1] < 0) {
+        coords[1] = LuminairePatternBuilder.ROWS - 1 + coords[1];
+    }
+    return coords;
 }
 
 async function runByLuminairePattern(

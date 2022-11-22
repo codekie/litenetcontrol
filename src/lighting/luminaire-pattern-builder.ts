@@ -40,6 +40,7 @@ class LuminairePatternBuilder {
         rowStartIndices: [1, 13, 25, 37],
         rows: LuminairePatternBuilder.ROWS,
     });
+    static COLS = LuminairePatternBuilder.luminaires.length;
 
     static _context: Context;
 
@@ -49,7 +50,7 @@ class LuminairePatternBuilder {
     }
 
     static staticPrintSetup() {
-        const cols = LuminairePatternBuilder.luminaires.length;
+        const cols = LuminairePatternBuilder.COLS;
         console.log('Luminaire-setup:');
         console.log(`.-${ ''.padStart(cols * 6, '-') }.`);
         _transposeMatrix(LuminairePatternBuilder.luminaires)
@@ -219,6 +220,6 @@ function _flip(
 }
 
 function _transposeMatrix<T>(matrix: T[][]) {
-    let [row] = matrix;
-    return row.map((value: T, col: number) => matrix.map((row: T[]) => row[col]));
+    const [row] = matrix;
+    return row.map((_value: T, idxCol: number) => matrix.map((row: T[]) => row[idxCol]));
 }
