@@ -33,11 +33,11 @@ interface LuminaireMatrixOpts {
 }
 
 class LuminairePatternBuilder {
-    static ROWS = 12;
+    static ROWS = 11;
     static luminaires = LuminairePatternBuilder._createLuminaireMatrix({
-        pattern: 'Leuchte_R21G{colnum}B{rownum}',
-        columnNumbers: [1, 13, 25, 37],
-        rowStartIndices: [1, 13, 25, 37],
+        pattern: 'Leuchte_R03G{colnum}B{rownum}',
+        columnNumbers: [1, 12, 23, 34],
+        rowStartIndices: [1, 12, 23, 34],
         rows: LuminairePatternBuilder.ROWS,
     });
     static COLS = LuminairePatternBuilder.luminaires.length;
